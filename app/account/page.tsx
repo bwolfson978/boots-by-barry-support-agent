@@ -29,16 +29,40 @@ export default async function AccountPage() {
       {/* Orders */}
       <section className="mb-16">
         <p className="label-caps text-ink mb-6">Order History</p>
-        <div className="divide-y divide-grey-200 border-t border-grey-200">
+        <div className="border-t border-grey-200 divide-y divide-grey-200">
           {orders.map((order) => {
-            const mainItem = order.items[0]
-            const product = mainItem ? getProduct(mainItem.productId) : null
+            const orderProducts = order.items
+              .map((item) => getProduct(item.productId))
+              .filter(Boolean)
+              .slice(0, 2)
             const itemCount = order.items.reduce((s, i) => s + i.qty, 0)
+            const total = order.items.reduce((s, i) => s + i.price * i.qty, 0)
 
             return (
-              <div key={order.id} className="py-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
+              <div key={order.id} className="flex min-h-[140px]">
+                {/* Image strip — stacks vertically when multiple products */}
+                <div className="w-[100px] shrink-0 overflow-hidden flex flex-col">
+                  {orderProducts.length > 0 ? (
+                    orderProducts.map((product, idx) => (
+                      <div
+                        key={idx}
+                        className="flex-1 overflow-hidden bg-grey-100 relative"
+                      >
+                        <img
+                          src={product!.images[0]}
+                          alt={product!.name}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div className="flex-1 bg-grey-100" />
+                  )}
+                </div>
+
+                {/* Order details */}
+                <div className="flex-1 flex items-start justify-between gap-4 py-6 pl-6 pr-0">
+                  <div className="min-w-0">
                     <div className="flex items-center gap-3 mb-2">
                       <p className="text-ink font-light">{order.id}</p>
                       <span
@@ -48,18 +72,21 @@ export default async function AccountPage() {
                       </span>
                     </div>
                     <p className="text-sm text-grey-400">
-                      {itemCount} item{itemCount > 1 ? "s" : ""}{product ? ` · ${product.name}${order.items.length > 1 ? " + more" : ""}` : ""}
+                      {itemCount} item{itemCount > 1 ? "s" : ""}
+                      {orderProducts[0] ? ` · ${orderProducts[0]!.name}${order.items.length > 1 ? " + more" : ""}` : ""}
                     </p>
                     <p className="text-sm text-grey-400 mt-1">
                       {order.shippingAddress.line1}, {order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.zip}
                     </p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-sm text-ink font-light">
-                      ${order.items.reduce((s, i) => s + i.price * i.qty, 0)}
-                    </p>
+                    <p className="text-sm text-ink font-light">${total}</p>
                     <p className="label-caps text-grey-400 mt-1">
-                      {new Date(order.placedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                      {new Date(order.placedAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
                     </p>
                   </div>
                 </div>
@@ -68,7 +95,6 @@ export default async function AccountPage() {
           })}
         </div>
       </section>
-
     </div>
   )
 }

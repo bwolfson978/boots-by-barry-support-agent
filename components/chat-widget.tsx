@@ -177,27 +177,82 @@ export function ChatWidget({ onClose, height = 480 }: { onClose?: () => void; he
   )
 }
 
+type OrderItem = { productId: string; size: number; qty: number; price: number }
+type OrderSummary = { id: string; status: string; placedAt: string; items: OrderItem[] }
+
+function OrderThumb({ productId, size = 28 }: { productId: string; size?: number }) {
+  return (
+    <div
+      className="shrink-0 overflow-hidden bg-grey-100 relative"
+      style={{ width: size, height: size }}
+    >
+      <img
+        src={`/images/${productId}-1.jpg`}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    </div>
+  )
+}
+
 function ToolOutput({ toolName, output }: { toolName: string; output: unknown }) {
   if (toolName === "getMyOrders" && Array.isArray(output)) {
     return (
-      <div className="mt-2 space-y-1">
-        {(output as Array<{ id: string; status: string; placedAt: string }>).map((order) => (
-          <div key={order.id} className="flex items-center justify-between text-xs">
-            <span className="text-ink font-light">{order.id}</span>
-            <span className="label-caps text-grey-400 text-[10px]">{order.status}</span>
+      <div className="mt-2 space-y-1.5">
+        {(output as OrderSummary[]).map((order) => {
+          const firstProductId = order.items?.[0]?.productId
+          return (
+            <div key={order.id} className="flex items-center gap-2">
+              {firstProductId && <OrderThumb productId={firstProductId} size={28} />}
+              <div className="flex-1 flex items-center justify-between min-w-0">
+                <span className="text-ink font-light text-xs truncate">{order.id}</span>
+                <span className="label-caps text-grey-400 text-[10px] shrink-0 ml-2">{order.status}</span>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+
+  if (toolName === "getOrderDetails" && typeof output === "object" && output !== null && !("error" in output)) {
+    const order = output as OrderSummary & {
+      shippingAddress?: { name: string; line1: string; city: string; state: string; zip: string }
+    }
+    const previewItems = order.items?.slice(0, 2) ?? []
+    return (
+      <div className="mt-2">
+        {/* Image strip */}
+        {previewItems.length > 0 && (
+          <div className="flex gap-1 mb-2">
+            {previewItems.map((item, i) => (
+              <OrderThumb key={i} productId={item.productId} size={44} />
+            ))}
           </div>
-        ))}
+        )}
+        <div className="flex items-center justify-between text-xs mb-1">
+          <span className="text-ink font-light">{order.id}</span>
+          <span className="label-caps text-grey-400 text-[10px]">{order.status}</span>
+        </div>
+        {order.shippingAddress && (
+          <p className="text-[11px] text-grey-400 leading-snug">
+            {order.shippingAddress.line1}, {order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.zip}
+          </p>
+        )}
       </div>
     )
   }
 
   if (toolName === "searchCatalog" && Array.isArray(output)) {
     return (
-      <div className="mt-2 space-y-1">
-        {(output as Array<{ name: string; price: number; flex: number }>).map((p) => (
-          <div key={p.name} className="flex items-center justify-between text-xs">
-            <span className="text-ink font-light">{p.name}</span>
-            <span className="label-caps text-grey-400 text-[10px]">${p.price} · Flex {p.flex}</span>
+      <div className="mt-2 space-y-1.5">
+        {(output as Array<{ id: string; name: string; price: number; flex: number }>).map((p) => (
+          <div key={p.name} className="flex items-center gap-2">
+            {p.id && <OrderThumb productId={p.id} size={28} />}
+            <div className="flex-1 flex items-center justify-between min-w-0">
+              <span className="text-ink font-light text-xs truncate">{p.name}</span>
+              <span className="label-caps text-grey-400 text-[10px] shrink-0 ml-2">${p.price} · Flex {p.flex}</span>
+            </div>
           </div>
         ))}
       </div>
