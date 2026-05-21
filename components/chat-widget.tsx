@@ -14,6 +14,7 @@ const TOOL_LABELS: Record<string, string> = {
 export function ChatWidget({ onClose, height = 480 }: { onClose?: () => void; height?: number } = {}) {
   const [input, setInput] = useState("")
   const bottomRef = useRef<HTMLDivElement>(null)
+  const committedRef = useRef<Set<string>>(new Set())
 
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({ api: "/api/chat" }),
@@ -22,6 +23,32 @@ export function ChatWidget({ onClose, height = 480 }: { onClose?: () => void; he
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
+
+  // When the agent confirms an address update, fire the commit endpoint so the
+  // signed mutation cookie is set — making the change visible on the account page
+  // after a refresh, even across different Vercel container instances.
+  useEffect(() => {
+    for (const message of messages) {
+      for (const part of message.parts) {
+        const p = part as { type: string; state?: string; toolCallId?: string; output?: { ok?: boolean; orderId?: string; newAddress?: unknown } }
+        if (
+          p.type === "tool-updateShippingAddress" &&
+          p.state === "output-available" &&
+          p.output?.ok === true
+        ) {
+          const key = p.toolCallId ?? JSON.stringify(p.output)
+          if (!committedRef.current.has(key)) {
+            committedRef.current.add(key)
+            fetch("/api/orders/update-address", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ orderId: p.output.orderId, newAddress: p.output.newAddress }),
+            })
+          }
+        }
+      }
+    }
   }, [messages])
 
   function handleSubmit(e: React.FormEvent) {
