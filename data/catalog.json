@@ -1,0 +1,313 @@
+[
+  {
+    "id": "alpine-carbon-130",
+    "name": "Alpine Carbon 130",
+    "price": 899,
+    "currency": "USD",
+    "category": "ski-touring",
+    "shortDescription": "Lightweight carbon touring boot for committed ascents.",
+    "description": "The Alpine Carbon 130 is built for the alpinist who refuses to compromise at either end of the day. A full-carbon cuff sheds 180g over conventional constructions, while the 130-flex index holds hard snow edges without deflection. The Grilamid shell is precision-injected with a 98mm last, accommodating a performance-fit liner with heat-moldable zones. Walk mode delivers 18° of ramp angle for clean skinning posture across sustained vertical. Designed for guide-pace objectives where every gram is justified and every descent deserves the full boot.",
+    "specs": {
+      "flex": 130,
+      "lastWidthMm": 98,
+      "weightGrams": 1090,
+      "abilityLevel": "expert",
+      "terrain": "alpine touring"
+    },
+    "materials": [
+      "full carbon cuff",
+      "Grilamid LFT shell",
+      "Boa L6 closure",
+      "Pomoca-compatible sole"
+    ],
+    "sizes": [
+      25,
+      25.5,
+      26,
+      26.5,
+      27,
+      27.5,
+      28,
+      28.5,
+      29,
+      29.5,
+      30
+    ],
+    "tags": [
+      "lightweight",
+      "touring",
+      "carbon",
+      "stiff",
+      "expert",
+      "backcountry",
+      "high performance",
+      "gram weenie"
+    ],
+    "images": [
+      "/images/alpine-carbon-130-1.jpg",
+      "/images/alpine-carbon-130-2.jpg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "meridian-tour-110",
+    "name": "Meridian Tour 110",
+    "price": 699,
+    "currency": "USD",
+    "category": "ski-touring",
+    "shortDescription": "Versatile touring boot balancing comfort and precision.",
+    "description": "The Meridian Tour 110 sits at the crossroads of all-day comfort and technical precision \u00e2\u20ac\u201d the boot for skiers who do it all. A 110-flex Grilamid shell pairs with a 100mm last for a fit that accommodates a performance liner without sacrificing blood flow on multi-hour approaches. The walk mechanism is seamless to engage one-handed with a gloved grip, and the rockered rubber outsole grips approach terrain with confidence. This is the quiver-of-one touring boot: capable enough for steep couloirs, comfortable enough for dawn-to-dark ridge traverses.",
+    "specs": {
+      "flex": 110,
+      "lastWidthMm": 100,
+      "weightGrams": 1420,
+      "abilityLevel": "advanced",
+      "terrain": "all-mountain touring"
+    },
+    "materials": [
+      "Grilamid LFT shell",
+      "thermoformable liner",
+      "dual-buckle cuff",
+      "rubber lug outsole"
+    ],
+    "sizes": [
+      24.5,
+      25,
+      25.5,
+      26,
+      26.5,
+      27,
+      27.5,
+      28,
+      28.5,
+      29,
+      29.5,
+      30,
+      30.5
+    ],
+    "tags": [
+      "touring",
+      "versatile",
+      "all-mountain",
+      "advanced",
+      "backcountry",
+      "comfortable",
+      "mid-weight"
+    ],
+    "images": [
+      "/images/meridian-tour-110-1.jpg",
+      "/images/meridian-tour-110-2.jpg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "summit-race-140",
+    "name": "Summit Race 140",
+    "price": 1150,
+    "currency": "USD",
+    "category": "alpine-racing",
+    "shortDescription": "Race-tuned alpine boot for podium-level performance.",
+    "description": "The Summit Race 140 is a sanctioned race boot adapted for free skiing. The 140-flex monocoque shell eliminates the cuff-to-shell interface entirely, transmitting edge pressure with zero latency. The 96mm last demands precision fitting \u00e2\u20ac\u201d we recommend a shell-fit appointment \u00e2\u20ac\u201d and rewards it with a locked-in feel that competitive skiers describe as an extension of the foot. Three macro-adjustable buckles use aircraft-grade aluminum bails. No walk mode. No compromise. For the skier who has already made peace with that.",
+    "specs": {
+      "flex": 140,
+      "lastWidthMm": 96,
+      "weightGrams": 1580,
+      "abilityLevel": "expert",
+      "terrain": "alpine resort"
+    },
+    "materials": [
+      "monocoque Grilamid shell",
+      "race liner",
+      "aluminum buckle bails",
+      "rubber race sole"
+    ],
+    "sizes": [
+      25,
+      25.5,
+      26,
+      26.5,
+      27,
+      27.5,
+      28,
+      28.5,
+      29,
+      29.5
+    ],
+    "tags": [
+      "race",
+      "stiff",
+      "expert",
+      "alpine",
+      "resort",
+      "performance",
+      "no-compromise",
+      "narrow"
+    ],
+    "images": [
+      "/images/summit-race-140-1.jpg",
+      "/images/summit-race-140-2.jpg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "freeride-pro-100",
+    "name": "Freeride Pro 100",
+    "price": 749,
+    "currency": "USD",
+    "category": "freeride",
+    "shortDescription": "Wide-last freeride boot for big-mountain and powder terrain.",
+    "description": "The Freeride Pro 100 is designed for the skier who lives in the sidecountry and charges deep snow without apology. A 102mm last accommodates a beefier liner \u00e2\u20ac\u201d the Primaloft-insulated heat-moldable unit included \u00e2\u20ac\u201d for warmth on cold powder days and a plush fit in thick socks. The 100-flex shell provides enough forgiveness to absorb variable snow conditions while still initiating turns with authority. An oversized walk-mode lever works in mitts. The directional sole lugs clear snow aggressively for bootpacking approaches. This is the boot for the skier whose objectives start where the groomer ends.",
+    "specs": {
+      "flex": 100,
+      "lastWidthMm": 102,
+      "weightGrams": 1720,
+      "abilityLevel": "advanced",
+      "terrain": "freeride off-piste powder"
+    },
+    "materials": [
+      "Grilamid shell",
+      "Primaloft liner",
+      "wide-last frame",
+      "directional lug outsole"
+    ],
+    "sizes": [
+      25,
+      25.5,
+      26,
+      26.5,
+      27,
+      27.5,
+      28,
+      28.5,
+      29,
+      29.5,
+      30,
+      30.5,
+      31
+    ],
+    "tags": [
+      "freeride",
+      "powder",
+      "wide",
+      "warm",
+      "off-piste",
+      "backcountry",
+      "big-mountain",
+      "comfortable"
+    ],
+    "images": [
+      "/images/freeride-pro-100-1.jpg",
+      "/images/freeride-pro-100-2.jpg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "piste-master-90",
+    "name": "Piste Master 90",
+    "price": 549,
+    "currency": "USD",
+    "category": "all-mountain",
+    "shortDescription": "Confident all-mountain boot for intermediate to advanced skiers.",
+    "description": "The Piste Master 90 is the boot for skiers who have graduated from rentals and know what they want: a proper fit, reliable performance across all conditions, and the confidence to push into steeper terrain. The 90-flex shell strikes the sweet spot between forgiveness and response. A 101mm last fits a mid-width foot in a performance liner without pressure points. Four micro-adjustable buckles and a power strap fine-tune fit across a full day of skiing. This is the boot you grow into \u00e2\u20ac\u201d and grow with \u00e2\u20ac\u201d as your skiing progresses.",
+    "specs": {
+      "flex": 90,
+      "lastWidthMm": 101,
+      "weightGrams": 1650,
+      "abilityLevel": "intermediate",
+      "terrain": "all-mountain resort"
+    },
+    "materials": [
+      "Grilamid shell",
+      "comfort liner",
+      "four-buckle cuff",
+      "rubber outsole"
+    ],
+    "sizes": [
+      24,
+      24.5,
+      25,
+      25.5,
+      26,
+      26.5,
+      27,
+      27.5,
+      28,
+      28.5,
+      29,
+      29.5,
+      30,
+      30.5,
+      31
+    ],
+    "tags": [
+      "all-mountain",
+      "intermediate",
+      "resort",
+      "versatile",
+      "comfortable",
+      "value",
+      "progression"
+    ],
+    "images": [
+      "/images/piste-master-90-1.jpg",
+      "/images/piste-master-90-2.jpg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "intro-comfort-75",
+    "name": "Intro Comfort 75",
+    "price": 349,
+    "currency": "USD",
+    "category": "beginner",
+    "shortDescription": "Forgiving entry-level boot for new and returning skiers.",
+    "description": "The Intro Comfort 75 makes your first days on snow\u00e2\u20ac\u201dor your return after years away\u00e2\u20ac\u201das straightforward as possible. The 75-flex shell forgives technical imperfections and reduces leg fatigue, while the wide 104mm last accommodates most foot shapes without pinching. An easy-entry design with a rear-spoiler latch lets you step in and out without gymnastics. The three-buckle system is color-coded for intuitive adjustment. Warm-climate insulation in the liner keeps circulation comfortable through long lesson days. No compromises in safety or build quality \u00e2\u20ac\u201d just a friendly, confidence-building fit.",
+    "specs": {
+      "flex": 75,
+      "lastWidthMm": 104,
+      "weightGrams": 1820,
+      "abilityLevel": "beginner",
+      "terrain": "groomed resort"
+    },
+    "materials": [
+      "polyurethane shell",
+      "warm insulated liner",
+      "easy-entry rear spoiler",
+      "rubber outsole"
+    ],
+    "sizes": [
+      23,
+      23.5,
+      24,
+      24.5,
+      25,
+      25.5,
+      26,
+      26.5,
+      27,
+      27.5,
+      28,
+      28.5,
+      29,
+      29.5,
+      30,
+      30.5,
+      31
+    ],
+    "tags": [
+      "beginner",
+      "comfortable",
+      "easy",
+      "warm",
+      "wide",
+      "forgiving",
+      "entry-level",
+      "lesson"
+    ],
+    "images": [
+      "/images/intro-comfort-75-1.jpg",
+      "/images/intro-comfort-75-2.jpg"
+    ],
+    "inStock": false
+  }
+]
